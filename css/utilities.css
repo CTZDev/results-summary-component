@@ -1,0 +1,9 @@
+.u-wrapper {
+  padding: 0 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .u-wrapper {
+    padding: 0 2.1rem;
+  }
+}
