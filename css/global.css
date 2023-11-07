@@ -51,6 +51,14 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
+a,
+button,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 /* Make images easier to work with */
 img,
 picture {
