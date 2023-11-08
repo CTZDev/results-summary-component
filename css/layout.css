@@ -1,3 +1,10 @@
+/*CONTENEDOR GENERAL*/
+.subcontainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
 /*MAIN*/
 .main {
   background-image: linear-gradient(to bottom, var(--gradient-light-slate-blue), var(--gradient-light-royal-blue));
@@ -41,6 +48,8 @@
 .main-paragraph {
   color: var(--neutral-white);
   padding: 18.5px 16px;
+  max-width: 400px;
+  margin: auto;
 }
 
 .main-paragraph h2 {
@@ -59,12 +68,6 @@
   padding: 30px 0;
 }
 
-.aside-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .aside-header {
   color: var(--neutral-dark-gray-blue);
   text-align: left;
@@ -78,7 +81,7 @@
 }
 
 .aside-card {
-  display: flex;
+  display: inherit;
   align-items: center;
   justify-content: space-between;
   height: 56px;
@@ -130,7 +133,6 @@
 
 .aside-card-title::before {
   content: "";
-  display: inline-block;
   width: 26px;
   height: 26px;
   position: absolute;
@@ -141,22 +143,22 @@
 /*Fondo por cd elemento*/
 .aside-card-title-reaction::before {
   background: url("../assets/images/icon-reaction.svg");
-  background-size: cover;
+  background-size: contain;
 }
 
 .aside-card-title-memory::before {
   background: url("../assets/images/icon-memory.svg");
-  background-size: cover;
+  background-size: contain;
 }
 
 .aside-card-title-verbal::before {
   background: url("../assets/images/icon-verbal.svg");
-  background-size: cover;
+  background-size: contain;
 }
 
 .aside-card-title-visual::before {
   background: url("../assets/images/icon-visual.svg");
-  background-size: cover;
+  background-size: contain;
 }
 
 .aside-card-value {
@@ -174,7 +176,8 @@
 
 /*BOTON*/
 .btn-continue {
-  display: inline-block;
+  display: block;
+  margin: auto;
   text-align: center;
   border: 1px solid transparent;
   outline: none;
@@ -182,16 +185,60 @@
   background-color: var(--neutral-dark-gray-blue);
   border-radius: 100vw;
   font-weight: bold;
+  width: 100%;
+  max-width: 450px;
   padding: 0.8rem;
-  max-width: 100%;
-  width: calc(375px - 4rem + 25vw);
   cursor: pointer;
   transform: scale(1);
   transition: transform .3s ease, background .3s ease;
-  align-self: center;
 }
 
 .btn-continue:hover {
   transform: scale(1.01) translateY(-0.125em);
-  background: hsla(224, 30%, 27%, 0.95);
+  background-image: linear-gradient(to bottom, var(--gradient-light-slate-blue) 20%, var(--gradient-violet-blue) 100%);
+}
+
+/*DESKTOP*/
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .subcontainer {
+    grid-template-columns: repeat(2, 368px);
+    border-radius: 2.5rem;
+    box-shadow: 0 0 8px 1px;
+  }
+
+  .main {
+    padding: 12px 0;
+    border-radius: inherit;
+  }
+
+  .main-header {
+    margin-bottom: 0.8rem;
+  }
+
+  .main-percentage {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 1rem;
+  }
+
+  .main-percentage p {
+    font-size: 3.8rem;
+  }
+
+  .main-percentage p>span {
+    font-size: 1rem;
+  }
+
+  .main-paragraph {
+    font-size: 1.1rem;
+    max-width: 275px;
+  }
+
 }
